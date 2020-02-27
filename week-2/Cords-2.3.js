@@ -5,7 +5,7 @@
 ; Author: Professor Krasso
 ; Date:   23 Feb 2020
 ; Modified by: Jason Cords
-; Description: Displays a formatted header
+; Description: Exercise in function properties
 ;===========================================
 */
 
