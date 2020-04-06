@@ -1,0 +1,87 @@
+<!--
+============================================
+; Title:  Exercise-8.3.html
+; Author: Professor Krasso
+; Date:   05 Apr 2020
+; Modified by: Jason Cords
+; Description: JQuery
+;===========================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Exercise 8.3</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="../site.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style type="text/css">
+  body{ /*adds style */
+    font-family: 'Roboto', sans-serif;
+    margin-left: 20px;
+  }
+  p{
+    margin-top: 20px;
+  }
+  table{
+    margin-top: 20px;
+  }
+  </style>
+
+</head>
+<body>
+  <h2>Lorem ipsum</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae lorem in mauris sagittis tincidunt. Morbi fringilla accumsan diam, eu
+  sollicitudin enim tempor ac. Nunc gravida est vitae feugiat pharetra. In auctor elit at felis volutpat consequat. Orci varius natoque penatibus
+  et magnis dis parturient montes, nascetur ridiculus mus. Quisque suscipit lacus id nunc suscipit, id sagittis eros fringilla. Morbi tincidunt
+  pretium felis id bibendum. Sed et libero nibh. Mauris in turpis et erat cursus mattis vel non purus. Vestibulum pulvinar mattis bibendum.
+  Pellentesque ac neque ligula. Maecenas in tempus augue.</p>
+
+<button>toggle</button> <!--button to toggle-->
+
+<table> <!--table for fruits-->
+  <tr>
+    <th>ID</th>
+    <th>FRUIT</th>
+  </tr>
+  <tr>
+    <td class="id">4011</td> <!--create class for click event-->
+    <td>banana</td>
+  </tr>
+  <tr>
+    <td class="id">4218</td>
+    <td>apricot</td>
+  </tr>
+  <tr>
+    <td class="id">4259</td>
+    <td>cherry</td>
+  </tr>
+  <tr>
+    <td class="id">4027</td>
+    <td>grapefruit</td>
+  </tr>
+  <tr>
+    <td class="id">4312</td>
+    <td>mango</td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+
+$("button").click(function(){ //click event for button
+  $("p").toggle(); //toggles p tag
+});
+
+$(".id").click(function(event) { //click event for class= id
+
+  event.preventDefault();
+  var fruitId = $(this).text(); //gets text from id class td
+  var fruitType = $(this).closest("td").next().text(); //gets text from next closest td tag
+  alert(fruitId + " " + fruitType); //alert popup with text from returned values
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!--
+============================================
+; Title:  Exercise-8.2.html
+; Author: Professor Krasso
+; Date:   05 Apr 2020
+; Modified by: Jason Cords
+; Description: Dynamic html
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 8.2</title>
+  <link rel="stylesheet" href="../site.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style type="text/css">
+    ul {  /* adds to style */
+      list-style: none;
+      margin: 0 auto;
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+<div id="fruits"></div>
+
+<script>
+var fruits = [ //create array
+  {
+    id: "4011",
+    type: "banana"
+  },
+  {
+    id: "4218",
+    type: "apricot"
+  },
+  {
+    id: "4259",
+    type: "cherry"
+  },
+  {
+    id: "4027",
+    type: "grapefruit"
+  },
+  {
+    id: "4312",
+    type: "mango"
+  }
+];
+var end = "<h2>Fruits</h2><ul>"; //adds header to list and creates unorganized list
+fruits.forEach(function(fruit){ //iterates through array
+end += "<li>" + fruit.id + " " + fruit.type + "</li>" //adds items to var
+});
+end += "</ul>"; //adds closing tag
+document.getElementById('fruits').innerHTML = end; //method to populate div
+</script>
+
+</body>
+</html>
