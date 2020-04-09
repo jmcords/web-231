@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment 8.4</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- you will need to the href to point to your root directories css file -->
+  <link rel="stylesheet" href="../site.css">
+
+  <style type="text/css">
+    #employee tbody tr:hover {
+      cursor: pointer;
+      background-color: #ffff99;
+    }
+  </style>
+</head>
+<body>
+
+<div id="emps"></div>
+
+<script type="text/javascript">
+
+function employee(id, firstName, lastName, title){ //constructor function for employee array
+  this.id = id;
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.title = title;
+}
+
+var employees = [ //array for constructor
+  new employee(1, "Michael", "Cain", "President"),
+  new employee(2, "Mike", "Jones", "Manager"),
+  new employee(3, "Adam", "Sandler", "Janitor"),
+  new employee(4, "John", "Cena", "Security"),
+  new employee(5, "Jason", "Cords", "Developer")
+];
+
+//populating the output to start table
+var output = "<h2>Employee Listing</h2><table id='employee'><thead><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Title</th></tr></thead><tbody>";
+
+//function to iterate through array and populate output var for table
+employees.forEach(function(person){
+ output += "<tr><td>" + person.id + "</td><td>" + person.firstName + "</td><td>" + person.lastName + "</td><td>" + person.title + "</td></tr>"
+});
+
+output += "</tbody></table>"
+
+document.getElementById("emps").innerHTML = output; //method to populate div
+
+//function to iterate through array and find matching id
+function getEmployee(id){
+  employees.forEach(function(person){
+    if (id == person.id){ //if id matches passed value, popup with values from array
+      alert(person.id +" " + person.firstName + " " + person.lastName + " " +person.title);
+    };
+  })
+ };
+  // jQuery onClick event
+  // Don't remove this, just add your code to the body of the event (curly braces)
+  //gets id from first td and calls getEmployee function with value
+  $(function () {
+    $("table tr").click(function () {
+      var per = $(this).find("td:first").html();
+      getEmployee(per);
+    })
+  });
+</script>
+</body>
+</html>)
